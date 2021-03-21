@@ -41,7 +41,6 @@ local price = ''
 local entering = ''
 local entrer = ''
 local isSingle = ''
-local garage = ''
 local price = 0 
 
 local debug = false -- debug mode
@@ -421,7 +420,7 @@ function openPropertiesMenu()
 								if name == '' then 
 									ESX.ShowNotification('~r~Vous n\'avez aucun nom assigné !')
 								else 	
-								   TriggerServerEvent('aPropertiesmenu:Save', name, label, entering, exit, inside, outside, ipl, isSingle, isRoom, isGateway, roommenu, garage, price)
+								   TriggerServerEvent('aPropertiesmenu:Save', name, label, entering, exit, inside, outside, ipl, isSingle, isRoom, isGateway, roommenu, price)
 							   
 								   Citizen.Wait(15)
 								   SetEntityCoords(PlayerPedId(), PedPosition.x, PedPosition.y, PedPosition.z)
@@ -438,9 +437,6 @@ function openPropertiesMenu()
 								print('exit' ..exit)
 								print('outside' ..outside)
 								print('price'..price)
-								if garage ~= nil then 
-									print('garage'..garage)
-								end	   
 							end  
 						end
 					end)
